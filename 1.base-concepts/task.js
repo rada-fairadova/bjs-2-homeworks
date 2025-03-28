@@ -1,20 +1,25 @@
 "use strict";
 
 function solveEquation(a, b, c) {
-    let arr = [];
+  if (a === 0) {
+      if (b === 0) {
+          return []; 
+      }
+      return [-c / b];
+  }
 
-    if (discriminant < 0) {
-        return arr;
-    } else if (discriminant === 0) {
-        const root = -b / (2 * a);
-        arr.push(root);
-        return arr;
-    } else {
-        const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-        const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-        arr.push(root1, root2);
-        return arr; 
-    }
+  const discriminant = b * b - 4 * a * c;
+
+  if (discriminant > 0) {
+      const root1 = (-b + Math.sqrt(discriminant)) / (2 * a); 
+      const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+      return [root1, root2]; 
+  } else if (discriminant === 0) {
+      const root = -b / (2 * a);
+      return [root];
+  } else {
+      return []; 
+  }
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
