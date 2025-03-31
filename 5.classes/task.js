@@ -179,23 +179,3 @@ library.addBook(
         168
     )
 );
-library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
-library.addBook(new Magazine("Мурзилка", 1924, 60));
-
-console.log(library.findBookBy("name", "Властелин колец"));
-console.log(library.findBookBy("releaseDate", 1924).name);
-
-console.log("Количество книг до выдачи: " + library.books.length);
-library.giveBookByName("Машина времени");
-console.log("Количество книг после выдачи: " + library.books.length);
-
-const damagedBook = library.giveBookByName("Пикник на обочине");
-console.log("Выдана книга: " + damagedBook.name);
-damagedBook.state = 10;
-console.log("Состояние поврежденной книги: " + damagedBook.state); 
-
-damagedBook.fix();
-console.log("После восстановления, состояние книги: " + damagedBook.state); 
-
-library.addBook(damagedBook);
-console.log("Количество книг после добавления восстановленной книги: " + library.books.length);
