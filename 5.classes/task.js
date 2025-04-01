@@ -8,11 +8,7 @@ class PrintEditionItem {
     }
 
     fix() {
-        let newState = this.state * 1.5;
-        if (newState > 100) {
-            newState = 100; 
-        }
-        this._state = newState; 
+        this.state = this.state * 1.5; 
     }
 
     set state(newState) {
@@ -101,8 +97,8 @@ class Library {
 const picknick = new FantasticBook(
     "Аркадий и Борис Стругацкие",
     "Пикник на обочине",
-    1972,
-    168
+    168,
+    1972
 );
 
 
